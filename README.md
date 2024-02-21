@@ -28,7 +28,7 @@ Since the government is now officially acknowledging the existence of Unexplaine
     - description (String)
     - reporter (String)
     - reporter_reliable_witness (Boolean)
-    5b. Optional: add a __repr__ method to the Sighting model that returns a string representation of the model instance.
+- 5b. Optional: add a `__repr__` method to the Sighting model that returns a string representation of the model instance.
 6. Make the Sighting model inherit SerializerMixin.
 7. Create a migration and upgrade the database.
 8. Create at least 3 seed sightings in `seeds.py` and run the seeds file to populate the sightings table.
