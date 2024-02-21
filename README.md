@@ -27,7 +27,7 @@ Since the government is now officially acknowledging the existence of Unexplaine
     - approximate_speed (Integer)
     - description (String)
     - reporter (String)
-    - reporter_sober (Boolean)
+    - reporter_reliable_witness (Boolean)
     5b. Optional: add a __repr__ method to the Sighting model that returns a string representation of the model instance.
 6. Make the Sighting model inherit SerializerMixin.
 7. Create a migration and upgrade the database.
@@ -35,28 +35,28 @@ Since the government is now officially acknowledging the existence of Unexplaine
 
 ### Part 3: Create a Route to Get All Sightings
 1. Create a route (`/sightings`) that returns all sightings in the database in JSON format.
-2. Use the @app.route decorator and the make_response function from the flask module.
+2. Use the `@app.route` decorator and the `make_response` function from the flask module.
 3. Use the Sighting model to query the database for all sightings.
-4. Create a list of dictionaries from the query results using the to_dict method from the SerializerMixin class in a list comoprhension.
+4. Create a list of dictionaries from the query results using the `to_dict` method from the SerializerMixin class in a list comprehension.
 5. Return the list of dictionaries as a response in JSON format with a status code of 200.
 
 ### Part 4: Create a Route to Get a Single Sighting
 1. Create a route (`/sightings/<int:id>`) that returns a single sighting by its id in JSON format.
-2. Use the @app.route decorator and the make_response function from the flask module.
+2. Use the `@app.route` decorator and the `make_response` function from the flask module.
 3. Use the Sighting model to query the database for a single sighting by its id.
-4. Return the sighting as a response in JSON format with a status code of 200.
+4. Return the sighting (converted to a dictionary) as a response in JSON format with a status code of 200.
 
 ### Part 5: Create a Route to Get Sightings by Location
 1. Create a route (`/sightings/location/<string:location>`) that returns all sightings in the database by location in JSON format.
-2. Use the @app.route decorator and the make_response function from the flask module.
+2. Use the `@app.route` decorator and the `make_response` function from the flask module.
 3. Use the Sighting model to query the database for all sightings by location.
-4. Create a list of dictionaries from the query results using the to_dict method from the SerializerMixin class in a list comoprhension.
+4. Create a list of dictionaries from the query results using the `to_dict` method from the SerializerMixin class in a list comprehension.
 5. Return the list of dictionaries as a response in JSON format with a status code of 200.
 
 ### Stretch Goals
 
 #### `before_request` Hook
-Use the @app.before_request decorator to create a function that logs the total number of sightings in the database to the console before each request.
+Use the` @app.before_request` decorator to create a function that logs the total number of sightings in the database to the console before each request. The log should be in the format "Total sightings: <number>".
 
 #### BONUS: Create a Route to Get Siggtings by Location and Date
 Create a route that returns all sightings in the database by location and date in JSON format. The route will be in the format `/sightings/location/<string:location>/date/<string:date>`.
