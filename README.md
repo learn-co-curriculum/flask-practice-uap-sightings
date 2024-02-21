@@ -34,20 +34,20 @@ Since the government is now officially acknowledging the existence of Unexplaine
 8. Create at least 3 seed sightings in `seeds.py` and run the seeds file to populate the sightings table.
 
 ### Part 3: Create a Route to Get All Sightings
-1. Create a route (/sightings) that returns all sightings in the database in JSON format.
+1. Create a route (`/sightings`) that returns all sightings in the database in JSON format.
 2. Use the @app.route decorator and the make_response function from the flask module.
 3. Use the Sighting model to query the database for all sightings.
 4. Create a list of dictionaries from the query results using the to_dict method from the SerializerMixin class in a list comoprhension.
 5. Return the list of dictionaries as a response in JSON format with a status code of 200.
 
 ### Part 4: Create a Route to Get a Single Sighting
-1. Create a route (/sightings/<int:id>) that returns a single sighting by its id in JSON format.
+1. Create a route (`/sightings/<int:id>`) that returns a single sighting by its id in JSON format.
 2. Use the @app.route decorator and the make_response function from the flask module.
 3. Use the Sighting model to query the database for a single sighting by its id.
 4. Return the sighting as a response in JSON format with a status code of 200.
 
 ### Part 5: Create a Route to Get Sightings by Location
-1. Create a route (/sightings/location/<string:location>) that returns all sightings in the database by location in JSON format.
+1. Create a route (`/sightings/location/<string:location>`) that returns all sightings in the database by location in JSON format.
 2. Use the @app.route decorator and the make_response function from the flask module.
 3. Use the Sighting model to query the database for all sightings by location.
 4. Create a list of dictionaries from the query results using the to_dict method from the SerializerMixin class in a list comoprhension.
@@ -59,4 +59,4 @@ Since the government is now officially acknowledging the existence of Unexplaine
 Use the @app.before_request decorator to create a function that logs the total number of sightings in the database to the console before each request.
 
 #### BONUS: Create a Route to Get Siggtings by Location and Date
-Create a route that returns all sightings in the database by location and date in JSON format. The route will be in the format '/sightings/location/<string:location>/date/<string:date>'.
+Create a route that returns all sightings in the database by location and date in JSON format. The route will be in the format `/sightings/location/<string:location>/date/<string:date>`.
