@@ -10,7 +10,7 @@ Since the government is now officially acknowledging the existence of Unexplaine
 
 ### Part 1: Set up the Flask App
 1. Initialize a new Flask app in the `app.py` file.
-2. Create a route for the home page (`/`) that returns a welcome message in JSON format.  Use the @app.route decorator and the make_response function from the flask module. The welcome message should be a string that says "The UAPID welcome our new extraterrestrial overlords!" and response should include a status code of 200.
+2. Create a route for the home page (`/`) that returns a welcome message in JSON format.  Use the `@app.route` decorator and the `make_response` function from the flask module. The welcome message should be a string that says "The UAPID welcome our new extraterrestrial overlords!" and response should include a status code of 200.
 
 ### Part 2: Create a Database
 1. Configure the app to use a SQLite database.
@@ -27,7 +27,7 @@ Since the government is now officially acknowledging the existence of Unexplaine
     - approximate_speed (Integer)
     - description (String)
     - reporter (String)
-    - was_reporter_sober (Boolean)
+    - reporter_sober (Boolean)
     5b. Optional: add a __repr__ method to the Sighting model that returns a string representation of the model instance.
 6. Make the Sighting model inherit SerializerMixin.
 7. Create a migration and upgrade the database.
