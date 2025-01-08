@@ -12,6 +12,7 @@ ipdb = "*"
 faker = "*"
 jsonify = "*"
 sqlalchemy-serializer = "*"
+flask-restful = "*"
 
 [dev-packages]
 
