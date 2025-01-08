@@ -5,8 +5,13 @@ from sqlalchemy_serializer import SerializerMixin
 db = SQLAlchemy(engine_options={"echo": True})
 
 
+class TimestampMixin:
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+    updated_at = db.Column(db.DateTime, onupdate=db.func.now())
+
+
 # Define the Sighting model
-class Sighting(db.Model, SerializerMixin):
+class Sighting(db.Model, SerializerMixin, TimestampMixin):
     __tablename__ = "sightings"
 
     id = db.Column(db.Integer, primary_key=True)
