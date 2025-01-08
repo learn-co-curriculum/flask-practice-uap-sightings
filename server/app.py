@@ -36,6 +36,16 @@ def show(location):
     return make_response([s.to_dict() for s in s_list], 200)
 
 
+@app.route("/sightings/location/<string:location>/date/<string:date>")
+def filter_sightings(location, date):
+    s_list = Sighting.query.filter(
+        Sighting.location == location, Sighting.date == date
+    ).all()
+    if len(s_list) == 0:
+        return make_response("There are no sightings at that location and date", 404)
+    return make_response([s.to_dict() for s in s_list], 200)
+
+
 class Sightings(Resource):
     def get(self):
         sightings = [s.to_dict() for s in Sighting.query.all()]
