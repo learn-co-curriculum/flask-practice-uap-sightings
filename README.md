@@ -58,5 +58,5 @@ Since the government is now officially acknowledging the existence of Unexplaine
 #### `before_request` Hook
 Use the` @app.before_request` decorator to create a function that logs the total number of sightings in the database to the console before each request. The log should be in the format "Total sightings: <number>".
 
-#### BONUS: Create a Route to Get Siggtings by Location and Date
+#### BONUS: Create a Route to Get Sightings by Location and Date
 Create a route that returns all sightings in the database by location and date in JSON format. The route will be in the format `/sightings/location/<string:location>/date/<string:date>`.
