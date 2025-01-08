@@ -31,7 +31,7 @@ def home():
 @app.route("/sightings/location/<string:location>")
 def show(location):
     s_list = Sighting.query.filter(Sighting.location == location).all()
-    if s_list.length == 0:
+    if len(s_list) == 0:
         return make_response("There are no sightings at that location", 404)
     return make_response([s.to_dict() for s in s_list], 200)
 
@@ -53,6 +53,11 @@ class SightingById(Resource):
 
 api.add_resource(Sightings, "/sightings")
 api.add_resource(SightingById, "/sightings/<int:id>")
+
+
+@app.before_request
+def total_sightings():
+    print(f"Total sightings: {len(Sighting.query.all())}")
 
 
 if __name__ == "__main__":

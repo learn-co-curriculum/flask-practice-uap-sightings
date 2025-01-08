@@ -5,10 +5,25 @@ from random import randint
 
 from app import app, db
 from faker import Faker
+from faker.providers import DynamicProvider
 from models import Sighting
 
 # Define seeding functions (optional: use Faker to help generate fake data)
+locations_provider = DynamicProvider(
+    provider_name="locations",
+    elements=[
+        "New Monicaland",
+        "South Tinamouth",
+        "New Cole",
+        "West Josephchester",
+        "South Barbara",
+        "South Elizabethmouth",
+        "Campbellshire",
+    ],
+)
+
 fake = Faker()
+fake.add_provider(locations_provider)
 
 
 def clear_data():
@@ -24,7 +39,7 @@ def gen_sightings():
         s = Sighting(
             date=fake.date_this_decade(),
             time=fake.time(),
-            location=fake.city(),
+            location=fake.locations(),
             shape_of_craft=rc(shapes),
             approximate_size=randint(1, 1000),
             approximate_speed=randint(0, 1000),
